@@ -2,7 +2,7 @@
 import { NgModule } from  '@angular/core';
 // tslint:disable-next-line:max-line-length
 import {MatNativeDateModule, MatDatepickerModule, MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatListModule,} from  '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,  } from '@angular/forms';
 
 @NgModule({
 // tslint:disable-next-line:max-line-length

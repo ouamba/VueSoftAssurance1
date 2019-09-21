@@ -1,0 +1,572 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>SoftAssuranceAuto</title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+
+</head>
+
+
+
+<div class="image-container set-full-height" style="background-image: url('assets/img/wizard-book.jpg')">
+  <!--   Creative Tim Branding   -->
+  <a href="http://creative-tim.com">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="assets/img/new_logo.png">
+      </div>
+      <div class="brand">
+       ITAGILEFLOW Team
+      </div>
+    </div>
+  </a>
+
+
+  <!--  Made With Material Kit  -->
+  <a href="http://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard" class="made-with-mk">
+    <div class="brand">OK</div>
+    <div class="made-with">Fait Par <strong>Ouambis Soft</strong></div>
+  </a>
+
+  <!--   Big container   -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <div class="card wizard-card" data-color="red" id="wizard">
+            <form action="" method="POST">
+
+              <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+              <div class="wizard-header">
+                <h2 class="wizard-title">
+                  Soft-Assurance
+                </h2>
+                <h4> <strong>ITAGILEFLOW.Tout Notre Savoir Faire à Votre Service</strong> </h4>
+              </div>
+              <div class="wizard-navigation">
+                <ul>
+                  <li><a href="#details" data-toggle="tab">Client</a></li>
+                  <li><a href="#infoVehicule" data-toggle="tab">Véhicule</a></li>
+                  <li><a href="#captain" data-toggle="tab">DTA-INFO</a></li>
+                  <li><a href="#periode" data-toggle="tab">Période</a></li>
+                  <li><a href="#garentie" data-toggle="tab">GARANTIES</a></li>
+                  <li><a href="#description" data-toggle="tab">ENCAISSEMENT</a></li>
+                </ul>
+              </div>
+
+              <div class="tab-content">
+                <div class="tab-pane" id="details">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h3 class="info-text"> Informations sur l'assuré.</h3>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">face</i>
+													</span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Nom et Prénom</label>
+                          <input  type="text" #nometprenom class="form-control"  required="" >
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">call</i>
+													</span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Téléphone</label>
+                          <input  type="number" #telephone  class="form-control">
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label">Ville de résidence</label>
+                        <select class="form-control" #zone >
+                         <option  *ngFor="let zone of zones" value="{{zone}}">{{zone}}</option>
+                        </select>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons">work</i>
+                          </span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Profession</label>
+                          <input type="text" #profession class="form-control">
+                          <!--[(ngModel)]="client.profession"-->
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="infoVehicule">
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h3 class="info-text"> <strong>Information sur le véhicule </strong> </h3>
+                    </div>
+                    <div class="col-sm-6">
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >date</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">date de mise en circulation</label>
+                          <mat-form-field>
+                            <input matInput #datePmc [matDatepicker]="myDatePicker" >
+                            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #myDatePicker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >create</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Immatriculation</label>
+                          <input type="text" #immatriculation class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >create</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">chassis</label>
+                          <input  type="text" #chassis class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="form-group label-floating">
+                        <label class="control-label"> Entrez la Marque vehicule</label>
+                        <select class="form-control" #marque>
+                          <option value=""> </option>
+                          <option value="Alfa Romeo">Alfa Romeo </option>
+                          <option value="Aston Martin">Aston Martin</option>
+                          <option value="Audi">Audi</option>
+                          <option value="Bentley">Bentley</option>
+                          <option value="BMW">BMW</option>
+                          <option value="Bugatti">Bugatti</option>
+                          <option value="Cadillac">Cadillac</option>
+                          <option value="Chevrolet">Chevrolet</option>
+                          <option value="Chrysler">Chrysler</option>
+                          <option value="Citroën">Citroën</option>
+                          <option value="Dacia">Dacia</option>
+                          <option value="Dodge">Dodge</option>
+                          <option value="Ferrari">Ferrari</option>
+                          <option value="Fiat">Fiat</option>
+                          <option value="Fisker">Fisker</option>
+                          <option value="Ford">Ford</option>
+                          <option value="Honda">Honda</option>
+                          <option value="Hyundai">Hyundai</option>
+                          <option value="Infiniti ">Infiniti </option>
+                          <option value="Jaguar">Jaguar </option>
+                          <option value="Jeep ">Jeep </option>
+                          <option value="Kia ">Kia </option>
+                          <option value=" Lamborghini">Lamborghini </option>
+                          <option value="Land Rover ">Land Rover </option>
+                          <option value="Lada">Lada</option>
+                          <option value=" Lexus"> Lexus</option>
+                          <option value=" Lotus">Lotus </option>
+                          <option value="Man ">Man </option>
+                          <option value="Maserati ">Maserati </option>
+                          <option value=" Mazda">Mazda </option>
+                          <option value="McLaren ">McLaren </option>
+                          <option value="Mercedes "> Mercedes</option>
+                          <option value="Mini ">Mini </option>
+                          <option value="Mitsubishi ">Mitsubishi </option>
+                          <option value=" Nissan"> Nissan</option>
+                          <option value="Opel ">Opel </option>
+                          <option value="Peugeot ">Peugeot </option>
+                          <option value="Porsche ">Porsche </option>
+                          <option value="Renault "> Renault</option>
+                          <option value=" Rolls-Royce">Rolls-Royce </option>
+                          <option value="Saab ">Saab </option>
+                          <option value="Seat ">Seat </option>
+                          <option value="Skoda ">Skoda </option>
+                          <option value=" Smart">Smart </option>
+                          <option value=" Subaru "> Subaru </option>
+                          <option value="Suzuki ">Suzuki </option>
+                          <option value=" Tesla ">Tesla </option>
+                          <option value=" Toyota">Toyota</option>
+                          <option value="Volkswagen ">Volkswagen </option>
+                          <option value="Volvo">Volvo </option>
+                        </select>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >face</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Type </label>
+                          <input type="text" #type class="form-control">
+                        </div>
+                      </div>
+
+
+                      <div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">directions_car</i>
+													</span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">carroserie</label>
+                          <input type="text"  #carosserie class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+													<span class="input-group-addon">
+													<i class="material-icons">local_gas_station</i>
+													</span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Source d'énergie</label>
+                          <select class="form-control" #sourceEnergie id="se" required="">
+                            <option disabled="" selected=""></option>
+                            <option value="ESS">Essence</option>
+                            <option value="GAZ"> Gaziol </option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >face</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Puissance</label>
+                          <input  type="text" #puissance class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >face</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Nombre de place</label>
+                          <input  type="number" #nombrePlace class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >face</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Poids a vide</label>
+                          <input  type="number" #poidesAvide class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">create</i>
+													</span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">charge utile</label>
+                          <input type="text" #chargeUtile class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >face</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">Valeur a Neuf </label>
+                          <input  type="number" #valeurANeuf class="form-control">
+                        </div>
+                      </div>
+
+                      <div class="form-group label-floating">
+
+                        <label class="control-label">Catégorie</label>
+
+                        <select class="form-control" #categorie id="categorie" required="">
+                          <option disabled="" selected=""></option>
+                          <option value="1">CAT1   --> Véhicule de tourisme ... </option>
+                          <option value="2">CAT2   --> Transport de Marchandise à titre privé</option>
+                          <option value="3">CAT3   --> Transport de Marchandise à titre commercial</option>
+                          <option value="4"  disabled="">CAT4A  --> Taxi de ville</option>
+                          <option value="5"  disabled="">CAT4B  --> CARS de transports(bus...)</option>
+                          <option value="6"  disabled="">CAT4C  --> Transport du personel (transport d'élève et autres..)</option>
+                          <option value="7"  disabled="">CAT5A  --> Moto personelle</option>
+                          <option value="8"  disabled="">CAT5B  --> Moto taxi (Bensikin...)</option>
+                          <option value="9"  disabled="">CAT6   --> Garagiste</option>
+                          <option value="10" disabled="">CAT7   --> Auto-ecole</option>
+                          <option value="11" disabled="">CAT8   --> Auto location</option>
+                          <option value="12" disabled="">CAT9   --> Engins( agricoles, forestier, caterpillar ...)</option>
+                          <option value="13" disabled="">  CAT10  --> Pompe funèbre, Ambulance et autres...</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="captain">
+                  <h3 class="info-text"><strong>Information sur le droit sur les Timbres Automobiles (DTA)</strong> </h3>
+                  <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <div class="col-sm-4">
+                        <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Cliquer ici si la DTA est deja payé et si vous desirez  avoir des informations suprémentaires..">
+                          <input type="radio" name="job" value="Design">
+                          <div class="icon">
+                            <i class="material-icons">done</i>
+                          </div>
+                          <h5>Déja Payer</h5>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="cliquer ici, si c'est Déja payé (sans details).">
+                          <input type="radio" name="job" value="Code">
+                          <div class="icon">
+                            <i class="material-icons">home</i>
+                          </div>
+                          <h5>Paye</h5>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Cliquer ici, si l'état est impayé...">
+                          <input type="radio" name="job" value="Code">
+                          <div class="icon">
+                            <i class="material-icons">exit_to_app</i>
+                          </div>
+                          <h5>IMPAYÉ</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="periode">
+                  <div class="row" >
+                    <div class="col-sm-12">
+                      <h3 class="info-text"> <strong>Informations sur la période de couverture</strong> </h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+														<i class="material-icons">create</i>
+                        </span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Durée (jours)</label>
+                          <select name="duree"  class="form-control" id="duree" required="">
+
+                            <option value="60"> 60 jrs ................(2 mois)</option>
+                            <option value="90"> 90 jrs ................(3 mois)</option>
+                            <option value="120"> 120 jrs ...............(4 mois)</option>
+                            <option value="150">150 jrs ...............(5 mois)</option>
+                            <option value="180">180 jrs ...............(6 mois)</option>
+                            <option value="210"> 210 jrs ...............(7 mois)</option>
+                            <option value="240">240 jrs ...............(8 mois)</option>
+                            <option value="270"> 270 jrs ...............(9 mois)</option>
+                            <option value="300"> 300 jrs ..............(10 mois)</option>
+                            <option value="330"> 330 jrs ..............(11 mois)</option>
+                            <option value="365"> 365 jrs ..................................(1 ans)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >date</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">date Effet</label>
+                          <mat-form-field>
+                            <input matInput [matDatepicker]="mDatePicker" >
+                            <mat-datepicker-toggle [for]="mDatePicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #mDatePicker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="material-icons" >date</i>
+                          </span>
+                        <div class="form-group label-floating" >
+                          <label class="control-label">date d'échéance</label>
+                          <mat-form-field>
+                            <input matInput [matDatepicker]="DatePicker" >
+                            <mat-datepicker-toggle [for]="DatePicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #DatePicker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="garentie">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h3 class="info-text"> <strong>Garanties et allocations des attestations et cartes roses</strong>  </h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="DR" id="DR">
+                          <b>Défense Recours</b>
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="AR" id="AR" di>
+                          <b>Avance sur Recours</b>
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="IPT" id="IPT">
+                          <b>Individuelle personne transportées</b>
+                        </label>
+                      </div>
+
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="B" id="B" disabled >
+                          <b>Braquage</b>
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="ICD" id="ICD" disabled >
+                          <b>Incendie</b>
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="VOL" id="VOL" disabled >
+                          <b>Vol</b>
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="oui" name="BDG" id="BDG" disabled >
+                          <b>Bris de glace</b>
+                        </label>
+                      </div>
+
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">create</i>
+                        </span>
+                        <div class="form-group label-floating">
+                          <label class="control-label">Valeur à neuf</label>
+                          <input name="valeur" type="Number" min="0" class="form-control" id="valeur">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label">N° attestation</label>
+                        <select class="form-control" id="attestation"  >
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label">N° de carte rose</label>
+                        <select class="form-control" id="carteR" >
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="tab-pane" id="description">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h2 class="info-text" id="aff">Encaissement. S' il vous plait rassurée vous que les données précedement entrées sont sans Erreurs puis Presser sur terminer...</h2>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="wizard-footer">
+                <div class="pull-right">
+                  <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' (click)="affichevehicule(nometprenom, telephone, profession, zone,
+                  datePmc, immatriculation, chassis, marque, type, carosserie, sourceEnergie, puissance, nombrePlace, poidesAvide, chargeUtile, valeurANeuf, categorie)" value='Next' />
+                  <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Finish' />
+                </div>
+                <div class="pull-left">
+                  <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+
+                  <div class="footer-checkbox">
+                    <div class="col-sm-12">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="optionsCheckboxes">
+                        </label>
+                        <h4>Ne pas conserver les informations sur le client</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </form>
+          </div>
+        </div> <!-- wizard container -->
+      </div>
+    </div> <!-- row -->
+  </div> <!--  big container -->
+
+  <div class="footer">
+    <div class="container text-center">
+      <h3>Développée avec <i class="fa fa-heart heart"></i> Par <a href="http://www.creative-tim.com">Ouambis de ITAGILEFLOW </a>.
+        Libre  <a href="http://www.creative-tim.com/product/material-bootstrap-wizard">ICI.</a></h3>
+
+    </div>
+  </div>
+</div>
+
+
+<!--   Core JS Files   -->
+<script src="./../../assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="./../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./../../assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+<!--  Plugin for the Wizard -->
+<script src="./../../assets/js/material-bootstrap-wizard.js"></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="./../../assets/js/jquery.validate.min.js"></script>
+
